@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k8t-7d!f0@g!8z_dg6ux!b6ztbd@bxm48i7h)yh!@&v)x7_0w6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['spiidify.herokuapp.com']
+ALLOWED_HOSTS = ['spiidify.herokuapp.com','127.0.0.1']
 
 # Application definition
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,6 +126,8 @@ STATICFILES_DIRS=[
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'AssetFiles')
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # media AssetFiles
 MEDIA_URL='/Media/'
