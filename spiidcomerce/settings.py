@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k8t-7d!f0@g!8z_dg6ux!b6ztbd@bxm48i7h)yh!@&v)x7_0w6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://spiidify.herokuapp.com']
+ALLOWED_HOSTS = ['spiidify.herokuapp.com']
 
 # Application definition
 
