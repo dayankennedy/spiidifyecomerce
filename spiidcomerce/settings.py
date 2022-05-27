@@ -131,7 +131,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-git
+
 
 # STATIC_ROOT = BASE_DIR / "staticfiles"
 
@@ -154,4 +154,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configure Django App for Heroku.
 import django_on_heroku
-django_on_heroku.settings(locals())ls
+django_on_heroku.settings(locals())
+
+
