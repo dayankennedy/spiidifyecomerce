@@ -144,7 +144,6 @@ MEDIA_URL='/Media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'Media/')
 
 
-git 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -153,5 +152,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Configure Django App for Heroku.
 import django_on_heroku
 django_on_heroku.settings(locals())
-
 
