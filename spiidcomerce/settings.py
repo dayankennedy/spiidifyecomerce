@@ -131,7 +131,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = [(os.path.join(BASE_DIR, 'static'))]
+STATICFILES_DIRS = [(os.path.join(BASE_DIR, 'spiidapp/static'))]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -144,7 +144,7 @@ MEDIA_URL='/Media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'Media/')
 
 
-
+git 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
