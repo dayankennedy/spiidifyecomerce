@@ -15,7 +15,7 @@ def home(request):
         
     # pagination code
     
-    paginator=Paginator(product_objects,20)
+    paginator=Paginator(product_objects,10)
     page=request.GET.get('page')
     product_objects=paginator.get_page(page)
     
