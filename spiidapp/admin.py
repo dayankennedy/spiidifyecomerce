@@ -7,3 +7,4 @@ class ProductsAdmin(admin.ModelAdmin):
     list_display=('title','price','discount_price','category','description','image')
 admin.site.register(Products,ProductsAdmin)
 
+

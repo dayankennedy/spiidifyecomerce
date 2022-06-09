@@ -19,3 +19,6 @@ class OderProduct(models.Model):
     #author = models.ForeignKey(User,on_delete=models.CASCADE)
     
     pass
+
+
+
