@@ -1,20 +1,17 @@
 from django.shortcuts import render
-from .models import Products
+from .models import Product
 from django.core.paginator import Paginator
-
-
-
 
 #Views
 def base(request):
     return render(request, 'base.html' )
 # HOME VIEW
 def home(request):
-    product_objects=Products.objects.all()
+    product_objects=Product.objects.all()
     # searching code
     item_name=request.GET.get('item_name')
     if item_name !=''and item_name is not None:
-        product_objects=Products.objects.filter(title__icontains=item_name)
+        product_objects=Product.objects.filter(title__icontains=item_name)
         
     # pagination code
     paginator=Paginator(product_objects,10)
@@ -28,9 +25,17 @@ def checkout(request):
 
 # PRODUCT VIEW
 def product(request):
-    product_object=Products.objects.get(id=id,)
+    product_object=Product.objects.get(id=id,)
     return render(request, 'product.html')
 
 # cart views
 def cart(request):
     return render(request, 'cart.html')
+
+
+def store(request):
+    return render(request, 'store.html')
+
+
+def updateItem(request):
+    return render(request, 'updateItem.html')
