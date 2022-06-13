@@ -24,11 +24,9 @@ def store(request):
 
 def cart(request):
 	data = cartData(request)
-
 	cartItems = data['cartItems']
 	order = data['order']
 	items = data['items']
-
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'cart.html', context)
 
