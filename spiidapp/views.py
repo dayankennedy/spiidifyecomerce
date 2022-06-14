@@ -11,23 +11,25 @@ def main(request):
     return render(request,'main.html')
 
 def store(request):
-	data = cartData(request)
+	# data = cartData(request)
 
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
+	# cartItems = data['cartItems']
+	# order = data['order']
+	# items = data['items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+	context = {'products':products}
 	return render(request, 'store.html', context)
 
 
 def cart(request):
-	data = cartData(request)
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
-	context = {'items':items, 'order':order, 'cartItems':cartItems}
+	if request.user.is_authenticated:
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
+		items= order.orderitem_set.all()
+	else:
+		items=[]
+	context = {'items':items}
 	return render(request, 'cart.html', context)
 
 def checkout(request):
